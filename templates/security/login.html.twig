@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+        {% block navbar %}
+           <a href="{{ path('home')}}">go home</a>
+        {% endblock %}
+    {% block body %}
+        {% if error is defined %}
+            <span> connexion non valide </span><br>
+        {% endif %}
+        {{ form(monForm) }}           
+    {% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+        {% block navbar %}
+           <a href="{{ path('home')}}">go home</a>
+        {% endblock %}
+{% block body %}
+<nav>
+    {% if errorSignin is defined %}
+        {% if errorSignin['username'] is defined %}
+            <span style="color:red">Username in used</span><br>
+        {% endif %}
+        {% if errorSignin['email'] is defined %}
+            <span style="color:red">email in used</span><br>
+        {% endif %}
+    {% endif %}
+    {{form(monForm)}}
+</nav>
+
+{% endblock %}

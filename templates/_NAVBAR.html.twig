@@ -1,0 +1,15 @@
+<nav>
+   
+    {% if app.session.get('utilNom') %}
+        <h1> bienvenu {{ app.session.get('utilNom')}} </h1>
+    {% endif %}
+     <a href="{{ path('home')}}">go home</a>
+    
+    {% if app.session.get('utilNom') %}
+    <a href="{{ path('logout')}}">logout</a>
+    {% else %}
+    <a href="{{ path('signin')}}">signin</a>
+    <a href="{{ path('login')}}">login</a>
+    {% endif %}
+</nav>
+
